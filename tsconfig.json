@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "rootDir": "./src", //源码目录
-    "target": "es2016", // 指定输出 ECMAScript 目标版本
+    "target": "es5", // 指定输出 ECMAScript 目标版本
     "module": "ESNext", //面向未来的ESM模块化
     "strict": true, // 开启所有的严格检查配置
     "esModuleInterop": true, // 允许 export = xxx 导出 ，并使用 import xxx form "module-name" 导入
