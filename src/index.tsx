@@ -1,19 +1,17 @@
 /*
  * @Author: yuta
  * @Date: 2022-02-23 15:03:10
- * @LastEditTime: 2022-02-23 15:04:52
+ * @LastEditTime: 2022-02-25 16:49:46
  * @LastEditors: yuta
  */
-import React from "react";
-import { render } from "react-dom";
+import React from 'react';
 
-try {
-  const rootElement = document.getElementById("root");
-  console.log("运行");
-  const App = () => {
-    return <div className="hello">Hello</div>;
-  };
-  render(<App />, rootElement);
-} catch (e) {
-  console.log("e", e);
-}
+import ReactDOM from 'react-dom';
+
+const rootElement = document.getElementById('root');
+
+const App = () => {
+  return <div style={{ color: 'red', fontSize: 20, backgroundColor: '#000' }}>Hello</div>;
+};
+
+ReactDOM.render(<App />, rootElement);
