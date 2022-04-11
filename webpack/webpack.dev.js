@@ -1,7 +1,7 @@
 /*
  * @Author: yuta
  * @Date: 2022-02-23 15:32:20
- * @LastEditTime: 2022-02-25 16:37:39
+ * @LastEditTime: 2022-04-11 11:43:09
  * @LastEditors: yuta
  */
 const webpack = require("webpack");
@@ -16,7 +16,8 @@ const { DIST_PATH } = variable;
 const config = {
   mode: "development",
   cache: { type: "memory" }, //开发环境使用内存缓存
-  devtool: "eval-cheap-module-source-map",
+  // source-map，方便你报错的时候能定位到错误代码的位置。它的体积不容小觑，所以对于不同环境设置不同的类型是很有必要的。
+  devtool: "eval-cheap-module-source-map", // 开发环境的时候我们需要精准的定位错误代码的信息和位置
   stats: "eval",
   devServer: { // 这里注意webpack-dev-server的配置，与webpack 5之前的版本有很大区别
     open: {

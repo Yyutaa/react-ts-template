@@ -1,7 +1,7 @@
 /*
  * @Author: yuta
  * @Date: 2022-02-23 15:26:35
- * @LastEditTime: 2022-02-25 14:30:53
+ * @LastEditTime: 2022-04-11 11:32:32
  * @LastEditors: yuta
  */
 const HtmlWebpackPlugin = require("html-webpack-plugin");
@@ -31,6 +31,7 @@ function getHTMLPlugins() {
 }
 
 function getPlugins() {
+  // css代码压缩
   const miniCssPlugin = new MiniCssExtractPlugin({
     filename: IS_DEV ? "css/[name].css" : "css/[name].[contenthash:8].css",
     chunkFilename: IS_DEV

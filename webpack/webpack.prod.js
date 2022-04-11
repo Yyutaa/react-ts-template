@@ -1,7 +1,7 @@
 /*
  * @Author: yuta
  * @Date: 2022-02-23 16:00:41
- * @LastEditTime: 2022-02-23 16:04:53
+ * @LastEditTime: 2022-04-11 11:27:36
  * @LastEditors: yuta
  */
 const webpackMerge = require("webpack-merge");
@@ -9,6 +9,7 @@ const baseConfig = require("./webpack.base");
 
 const config = {
   mode: "production",
+  devtool: "nosources-source-map", // 生产环境，我们想开启source-map，但是又不想体积太大，那么可以换一种类型
   cache: { type: "filesystem", buildDependencies: { config: [__filename] } }, // 使用文件缓存
   output: {
     pathinfo: false, //优化
