@@ -1,12 +1,11 @@
 /*
  * @Author: yuta
  * @Date: 2022-02-24 11:43:19
- * @LastEditTime: 2022-02-25 14:21:17
+ * @LastEditTime: 2022-04-22 14:26:18
  * @LastEditors: yuta
  */
 module.exports = {
   plugins: [
-    require("precss"),
     require("autoprefixer")({
       browsers: [
         "defaults",

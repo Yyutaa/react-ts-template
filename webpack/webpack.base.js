@@ -1,7 +1,7 @@
 /*
  * @Author: yuta
  * @Date: 2022-02-23 15:26:05
- * @LastEditTime: 2022-02-25 15:26:00
+ * @LastEditTime: 2022-04-22 11:27:47
  * @LastEditors: yuta
  */
 
@@ -50,9 +50,7 @@ const config = {
             plugins: ["@babel/plugin-proposal-class-properties"],
           },
         },
-
-        exclude: [/node_modules/, /public/, /(.|_)min\.js$/],
-        // exclude: /node_modules/,
+        exclude: [/node_modules/, /public/, /(.|_)min\.js$/], // 不包括解析这些文件
       },
       // A loader for css files.
       {

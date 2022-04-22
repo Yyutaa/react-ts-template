@@ -1,7 +1,7 @@
 /*
  * @Author: yuta
  * @Date: 2022-02-23 15:32:20
- * @LastEditTime: 2022-04-11 11:43:09
+ * @LastEditTime: 2022-04-22 17:31:54
  * @LastEditors: yuta
  */
 const webpack = require("webpack");
@@ -9,7 +9,6 @@ const path = require("path");
 const webpackMerge = require("webpack-merge");
 const baseConfig = require("./webpack.base");
 const variable = require("./webpackUtils/variable");
-const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin"); // 模块热更新
 
 const { DIST_PATH } = variable;
 
@@ -17,7 +16,7 @@ const config = {
   mode: "development",
   cache: { type: "memory" }, //开发环境使用内存缓存
   // source-map，方便你报错的时候能定位到错误代码的位置。它的体积不容小觑，所以对于不同环境设置不同的类型是很有必要的。
-  devtool: "eval-cheap-module-source-map", // 开发环境的时候我们需要精准的定位错误代码的信息和位置
+  devtool: "cheap-module-eval-source-map", // 开发环境的时候我们需要精准的定位错误代码的信息和位置 在大多数情况下，cheap-module-eval-source-map 是最好的选择
   stats: "eval",
   devServer: { // 这里注意webpack-dev-server的配置，与webpack 5之前的版本有很大区别
     open: {
@@ -43,7 +42,7 @@ const config = {
     // poll: 1000,
     ignored: /node_modules/,
   },
-  plugins: [new ReactRefreshWebpackPlugin()].filter(Boolean),
+  plugins: [new webpack.HotModuleReplacementPlugin()], // 使用webpack内置HMR热更新模块
   module: {
     // 打包静态资源
     rules: [

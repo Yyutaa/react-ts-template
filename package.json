@@ -1,15 +1,14 @@
 {
   "name": "react-ts-template",
   "version": "1.0.0",
-  "main": "index.tsx",
   "repository": "https://github.com/Yyutaa/react-ts-template.git",
   "author": "yuta <yangguangben@houselai.com>",
   "license": "MIT",
   "scripts": {
-    "start": "cross-env NODE_ENV=dev webpack serve --config webpack/webpack.dev.js",
+    "start": "webpack-dev-server --config webpack/webpack.dev.js",
     "build": "webpack --config webpack/webpack.dev.js",
     "build:test": "cross-env NODE_ENV=test webpack --config webpack/webpack.dev.js",
-    "build:prod": "cross-env NODE_ENV=prod webpack --config webpack/webpack.prod.js",
+    "build:prod": "cross-env NODE_ENV=prod webpack --config webpack/webpack.prod.js"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.6",
@@ -62,6 +61,7 @@
   "dependencies": {
     "cross-env": "^7.0.3",
     "dotenv": "^16.0.0",
+    "less-loader": "^10.2.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   }
